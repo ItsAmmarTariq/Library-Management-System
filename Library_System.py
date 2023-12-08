@@ -353,33 +353,36 @@ lib=Library()
 
 while True:
     display_menu()
-    opt = int(input(''))
+    try:
+        opt = int(input(''))
 
-    if opt == 1:
-        lib.show_books()
+        if opt == 1:
+            lib.show_books()
 
-    elif opt == 2:
-        lib.add_book()
+        elif opt == 2:
+            lib.add_book()
 
-    elif opt == 3:
-        # lib.borrow_book()
-        concurency_handling(lib,'borrow')
+        elif opt == 3:
+            # lib.borrow_book()
+            concurency_handling(lib,'borrow')
 
-    elif opt == 4:
-        concurency_handling(lib,'return')
+        elif opt == 4:
+            concurency_handling(lib,'return')
 
-    elif opt == 5:
-      lib.register_user()
-    
-    elif opt ==6:
-        lib.show_borrowers()
-    
-    elif opt ==7:
-        lib.calculate_average()
+        elif opt == 5:
+            lib.register_user()
+        
+        elif opt ==6:
+            lib.show_borrowers()
+        
+        elif opt ==7:
+            lib.calculate_average()
 
-    elif opt == 8:
-        print('Thank you for using the System .....')
-        break  # Exit the while loop
+        elif opt == 8:
+            print('Thank you for using the System .....')
+            break  # Exit the while loop
 
-    else:
-        print('Invalid choice! ', opt, 'Please try again')
+        else:
+            print('Invalid choice! ', opt, 'Please try again')
+    except Exception as e:
+        print('Please enter a Valid choice')
